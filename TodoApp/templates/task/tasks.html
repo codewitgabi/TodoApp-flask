@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "task/base.html" %}
 {% block title %} View Tasks {% endblock %}
 
 {% block content %}
@@ -8,6 +8,7 @@
         </form>
         <br>
         <a href="{{ url_for('todo.create_task') }}" style="font-style: italic; color: blue; text-decoration: none; font-size: 0.8rem;">Add Task</a>
+        <span style="float: right; font-size: 0.8rem;">{{ g.user["username"] }}</span>
         
         {% for task in tasks %}
         <div class="task">

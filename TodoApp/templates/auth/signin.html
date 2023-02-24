@@ -1,0 +1,27 @@
+{% extends "auth/base.html" %}
+{% block title %} Sign In {% endblock %}
+
+
+{% block content %}
+    <legend class="form-title">Sign In</legend>
+    {% for message in get_flashed_messages() %}
+    	<div class="error" align="left">
+    		{{ message }}
+    	</div>
+    {% endfor %}
+        <form action="" method="post" id="register-form">
+            <div class="form-input">
+                <i class="fa fa-user"></i>
+                <input type="text" name="username" autocapitalize="off" id="r-uname" placeholder="Username">
+            </div>
+            <div class="form-input">
+                <i class="fa fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" id="r-pword">
+                <i class="fa fa-eye"></i>
+            </div>
+            <button id="r-btn">Sign In</button>
+            <span>Already have an account?</span>
+            <a href="{{ url_for('auth.signup') }}">Sign up</a>
+        </form>
+
+{% endblock %}
