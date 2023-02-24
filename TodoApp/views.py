@@ -25,8 +25,18 @@ def login_required(func):
 	return wrapper
 	
 
+def already_logged_in(func):
+	@functools.wraps(func)
+	def wrapper(*args, **kwargs):
+		if g.user is not None:
+			return redirect(url_for("todo.view_tasks"))
+		return func(*args, **kwargs)
+	return wrapper
+	
+
 # Authentication Views
 @auth.route("/signup/", methods=["GET", "POST"])
+@already_logged_in
 def signup():
 	error = None
 	if request.method == "POST":
@@ -49,6 +59,7 @@ def signup():
 	
 
 @auth.route("/signin/", methods=["GET", "POST"])
+@already_logged_in
 def login():
 	error = None
 	if request.method == "POST":
