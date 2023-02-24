@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Create Task {% endblock %}
+
+{% block content %}
+
+        <form action="" method="post">
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="content" placeholder="Enter Task Description..."></textarea>
+            <input type="date" name="due_date">
+            <button>Save</button>
+        </form>
+        
+{% endblock %}

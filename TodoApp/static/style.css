@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 62.5%;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+.container {
+    margin: 2em;
+}
+#q {
+    width: 100%;
+    padding: 10px;
+}
+.task {
+    margin: 1em 0;
+    padding: 10px;
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+}
+.title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.due-date {
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.content {
+    font-size: 0.8rem;
+    word-wrap: 10px;
+}
+.upd-btn,
+.del-btn {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 5px 20px;
+    color: #fff;
+    border: 2px solid orange;
+}
+.upd-btn {
+    background: green;
+}
+.del-btn {
+    background: red;
+}
+input, textarea {
+    width: 100%;
+    display: inline-block;
+    margin: 5px 0;
+    padding: 12px;
+}
+textarea {
+    height: 100px;
+}

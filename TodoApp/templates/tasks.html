@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} View Tasks {% endblock %}
+
+{% block content %}
+
+        <form action="">
+            <input type="search" name="q" id="q" placeholder="Search Task...">
+        </form>
+        <br>
+        <a href="{{ url_for('todo.create_task') }}" style="font-style: italic; color: blue; text-decoration: none; font-size: 0.8rem;">Add Task</a>
+        
+        {% for task in tasks %}
+        <div class="task">
+            <legend class="title">{{ task["title"] }}</legend>
+            <span class="due-date">{{ task["due_date"] }}</span>
+            <p class="content">{{ task["content"] }}</p>
+            <a href="{{ url_for('todo.update_task', id=task['id']) }}">
+                <button class="upd-btn">Update</button>
+            </a>
+            <a href="{{ url_for('todo.delete_task', id=task['id']) }}">
+                <button class="del-btn">Delete</button>
+            </a>
+        </div>
+        {% endfor %}
+        
+{% endblock %}
