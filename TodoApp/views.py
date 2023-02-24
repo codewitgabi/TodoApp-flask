@@ -9,7 +9,7 @@ def view_tasks():
 	q = request.args.get("q", "")
 	# query data
 	db = get_db()
-	tasks = db.execute(f"SELECT * FROM task ORDER BY due_date").fetchall()
+	tasks = db.execute("SELECT * FROM task ORDER BY due_date").fetchall()
 	
 	return render_template("tasks.html", tasks= tasks)
 	
